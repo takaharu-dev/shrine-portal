@@ -134,6 +134,55 @@ Jinja Journey は、神社巡りをもっと自由に楽しむための神社ポ
 
 - AWS（予定）
 
+- Docker Compose（開発環境）
+
+---
+
+## 開発環境の起動
+
+Next.js + Go + PostgreSQL の最小開発環境を Docker Compose で起動できます。
+
+### 必要なもの
+
+- Docker
+- Docker Compose
+
+### 起動
+
+```bash
+docker compose up --build
+```
+
+### アクセス先
+
+| Service | URL |
+|---|---|
+| Frontend | http://localhost:3000 |
+| Backend health | http://localhost:8080/health |
+| PostgreSQL | localhost:5432 |
+
+### PostgreSQL 接続情報
+
+| Item | Value |
+|---|---|
+| Host | localhost |
+| Port | 5432 |
+| Database | shrine_portal |
+| User | postgres |
+| Password | postgres |
+
+### 停止
+
+```bash
+docker compose down
+```
+
+DB のデータも削除する場合:
+
+```bash
+docker compose down -v
+```
+
 ---
 
 ## 開発予定
