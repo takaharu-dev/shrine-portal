@@ -8,6 +8,10 @@ import (
 
 func Register(e *echo.Echo) {
 	healthHandler := handler.NewHealthHandler()
+	shrineHandler := handler.NewShrineHandler()
 
 	e.GET("/health", healthHandler.Show)
+
+	e.GET("/shrines", shrineHandler.Index)
+	e.GET("/shrines/:id", shrineHandler.Show)
 }
